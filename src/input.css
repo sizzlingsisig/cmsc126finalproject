@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #F59E0B;
+  --titlefont: 'Inter', sans-serif;
+  --headingfont: 'Vollkorn', serif;
+  --bodyfont: 'Poppins', sans-serif;
+}
+
+
+nav .borg{
+  background-color: var(--primary-color);
+}
+
+.title{
+  font-family: var(--titlefont);
+  color: white;
+  font-size: 150px;
+  font-weight: 900;
+}
+
+.fullmenu{
+  font-family: var(--titlefont);
+  color: white;
+  font-weight: 900;
+}
+
+.header{
+  margin-top: 20px;
+  font-family: var(--titlefont);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.regular{
+  font-family: var(--bodyfont);
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: normal;
+}

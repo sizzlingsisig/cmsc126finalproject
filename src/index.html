@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tailwind CSS Sticky Navbar</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="input.css" />
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .hamburger-toggle {
+          @apply [&>div]:h-0 [&>div]:bg-black [&>div]:before:translate-y-0 
+                 [&>div]:before:rotate-45 [&>div]:after:translate-y-0 
+                 [&>div]:after:-rotate-45;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-[100] bg-black p-5 text-white flex justify-between items-center relative">
+      <!-- Hamburger Menu -->
+      <button id="toggleMenu" class="grid place-content-center w-10 h-10 relative cursor-pointer">
+        <span
+          class="w-8 h-1 bg-white rounded-full transition-all duration-150 relative before:content-[''] before:absolute before:w-8 before:h-1 before:bg-white before:rounded-full before:-translate-y-2 before:left-0 before:transition-all before:duration-150 after:content-[''] after:absolute after:w-8 after:h-1 after:bg-white after:rounded-full after:translate-y-2 after:left-0 after:transition-all after:duration-150"
+        ></span>
+      </button>
+      <!-- Logo -->
+      <a href="index.html" class="absolute left-1/2 transform -translate-x-1/2 text-lg font-bold">
+        <img src="images/navbar/lbjlogo.svg" alt="Logo" class="h-8" />
+      </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Banner -->
+      <section
+        id="HeroBanner"
+        class="relative w-full h-screen bg-cover bg-center"
+        style="background-image: url('images/herobanner.jpg');"
+      >
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <h1 class="absolute inset-0 flex items-center justify-center text-4xl md:text-6xl lg:text-8xl font-bold text-white">LEBRON</h1>
+      </section>
+
+      <!-- Highlights Section -->
+      <section class="container mx-auto p-3">
+        <header class="flex flex-col md:flex-row justify-between items-center mb-8">
+          <h1 class="text-2xl md:text-3xl font-bold">THE KING'S COURT</h1>
+          <a href="" class="text-sm md:text-base text-blue-500 hover:underline">MORE HIGHLIGHTS →</a>
+        </header>
+
+        <div class="grid gap-8">
+          <!-- Row 1 -->
+          <div class="grid lg:grid-cols-3 gap-8">
+            <img src="./images/mediagallery/lbjdunk.jpg" alt="LeBron Dunking" class="lg:col-span-2 w-full h-auto rounded-lg shadow-lg" />
+            <article class="bg-white rounded-lg shadow-lg">
+              <img src="./images/mediagallery/lbjtry.jpg" alt="Highlight 1" class="w-full" />
+              <div class="p-4">
+                <h3 class="text-lg font-bold">Lebron Nag Shoot sa Net Kag Gin Kabo ni Garnett</h3>
+                <p class="text-sm text-gray-500 mt-2">Damian Strohmeyer/Sports Illustrated</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <article class="bg-white rounded-lg shadow-lg">
+              <img src="./images/mediagallery/lbjwarriors.jpg" alt="Highlight 2" class="w-full h-48 object-cover rounded-lg shadow-lg" />
+              <div class="p-4">
+                <h3 class="text-lg font-bold">LeBron makes the Warriors lose a 3-1 Lead</h3>
+                <p class="text-sm text-gray-500 mt-2">Greg Nelson/Sports Illustrated (2016)</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-lg">
+              <img src="./images/mediagallery/lbjmavs.webp" alt="Highlight 3" class="w-full h-48 object-cover rounded-lg shadow-lg" />
+              <div class="p-4">
+                <h3 class="text-lg font-bold">LeBron makes the Warriors lose a 3-1 Lead</h3>
+                <p class="text-sm text-gray-500 mt-2">Greg Nelson/Sports Illustrated (2016)</p>
+              </div>
+            </article>
+            <article class="bg-white rounded-lg shadow-lg">
+              <img src="./images/mediagallery/lbjkobe.jpg" alt="Highlight 4" class="w-full h-48 object-cover rounded-lg shadow-lg" />
+              <div class="p-4">
+                <h3 class="text-lg font-bold">LeBron makes the Warriors lose a 3-1 Lead</h3>
+                <p class="text-sm text-gray-500 mt-2">Greg Nelson/Sports Illustrated (2016)</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Alternate Birthday Countdown -->
+      <section class="container mx-auto px-6 py-16 bg-gray-800 text-white rounded-lg shadow-lg text-center space-y-8">
+        <h2 class="text-2xl md:text-4xl font-bold">LEBRON BIRTHDAY COUNTDOWN</h2>
+        <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-4">
+          <span class="text-4xl">🙇‍♂️</span>
+          <img src="./images/mediagallery/lbjbday.jpg" 
+               alt="LeBron Birthday" 
+               class="rounded-full shadow-2xl w-full max-w-xs md:max-w-md border-4 border-yellow-500 transform hover:scale-105 transition duration-300" />
+          <span class="text-4xl">🙇‍♀️</span>
+        </div>
+        <p class="text-sm md:text-lg text-gray-300">
+          Join us in counting down to <span class="text-yellow-400 font-semibold">December 30th, 2025</span>!
+        </p>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <!-- Countdown Blocks -->
+          <div class="bg-yellow-500 p-6 rounded-lg shadow-md text-center">
+            <time id="days" class="text-2xl md:text-3xl font-bold">0</time>
+            <div class="text-xs md:text-sm uppercase mt-2">Days</div>
+          </div>
+          <div class="bg-yellow-500 p-6 rounded-lg shadow-md text-center">
+            <time id="hours" class="text-2xl md:text-3xl font-bold">0</time>
+            <div class="text-xs md:text-sm uppercase mt-2">Hours</div>
+          </div>
+          <div class="bg-yellow-500 p-6 rounded-lg shadow-md text-center">
+            <time id="minutes" class="text-2xl md:text-3xl font-bold">0</time>
+            <div class="text-xs md:text-sm uppercase mt-2">Minutes</div>
+          </div>
+          <div class="bg-yellow-500 p-6 rounded-lg shadow-md text-center">
+            <time id="seconds" class="text-2xl md:text-3xl font-bold">0</time>
+            <div class="text-xs md:text-sm uppercase mt-2">Seconds</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Footer -->
+    <footer class="bg-black text-white p-5">
+      <div class="container mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+        <div>
+          <h2 class="text-lg font-bold mb-4">Bronsexuals</h2>
+          <p class="text-gray-400 text-justify"></p>
+            Isang tapat na grupo ng tagahanga ni LeBron, nagkakaisa sa paghanga sa kanyang kadakilaan.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold mb-4">Quick Links</h2>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:underline">The King's Court</a></li>
+            <li><a href="OnTheCourt.html" class="hover:underline">On the Court</a></li>
+            <li><a href="BeyondTheCourt.html" class="hover:underline">Beyond the Court</a></li>
+            <li><a href="Fanzone.html" class="hover:underline">Fanzone</a></li>
+
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold mb-4">Follow LeBron</h2>
+          <div class="flex justify-center md:justify-start space-x-6 text-2xl"></ul>
+            <a href="https://www.facebook.com/LeBron/" class="fa fa-facebook"></a>
+            <a href="https://x.com/KingJames" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/kingjames/" class="fa fa-instagram"></a>
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-8 text-sm">© 2023 LeBron James. All rights reserved.</p>
+    </footer>
+
+    <!-- Fullscreen Menu -->
+    <div id="fullscreenMenu" class="fixed inset-0 bg-gray-900 bg-opacity-95 text-white hidden flex justify-center items-center opacity-0 transform scale-90 transition-all duration-300 ease-in-out">
+      <nav class="fullmenu flex flex-col space-y-8 text-2xl text-center">
+        <a href="index.html" class="hover:underline hover:text-yellow-400 transition duration-200">The King's Court</a>
+        <a href="OnTheCourt.html" class="hover:underline hover:text-yellow-400 transition duration-200">On the Court</a>
+        <a href="BeyondTheCourt.html" class="hover:underline hover:text-yellow-400 transition duration-200">Beyond the Court</a>
+        <a href="Fanzone.html" class="hover:underline hover:text-yellow-400 transition duration-200">Fanzone</a>
+      </nav>
+    </div>
+
+
+      <script src="script.js"></script>
+    </main>
+  </body>
+</html>

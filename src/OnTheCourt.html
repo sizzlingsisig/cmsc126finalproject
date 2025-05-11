@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>LeBron Fan Page</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="input.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style type="text/tailwindcss">
+      @layer utilities {
+        .hamburger-toggle {
+          @apply [&>div]:h-0 [&>div]:bg-black [&>div]:before:translate-y-0 
+                 [&>div]:before:rotate-45 [&>div]:after:translate-y-0 
+                 [&>div]:after:-rotate-45;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Sticky Navbar -->
+    <nav class="sticky top-0 z-[100] bg-black p-5 text-white flex justify-between items-center relative">
+      <!-- Hamburger Menu -->
+      <button id="toggleMenu" class="grid place-content-center w-10 h-10 relative cursor-pointer">
+        <span
+          class="w-8 h-1 bg-white rounded-full transition-all duration-150 relative before:content-[''] before:absolute before:w-8 before:h-1 before:bg-white before:rounded-full before:-translate-y-2 before:left-0 before:transition-all before:duration-150 after:content-[''] after:absolute after:w-8 after:h-1 after:bg-white after:rounded-full after:translate-y-2 after:left-0 after:transition-all after:duration-150"
+        ></span>
+      </button>
+      <!-- Logo -->
+      <a href="index.html" class="absolute left-1/2 transform -translate-x-1/2 text-lg font-bold">
+        <img src="images/navbar/lbjlogo.svg" alt="Logo" class="h-8" />
+      </a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- Placeholder content for other pages -->
+      <section class="text-center">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Welcome to LeBron's Fan Page</h1>
+        <p class="text-lg text-gray-600 mt-4">
+          This is a reusable boilerplate for other pages. Replace this placeholder text with your page-specific content.
+        </p>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-black text-white p-5">
+      <div class="container mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+        <div>
+          <h2 class="text-lg font-bold mb-4">Bronsexuals</h2>
+          <p class="text-gray-400 text-justify"></p>
+            Isang tapat na grupo ng tagahanga ni LeBron, nagkakaisa sa paghanga sa kanyang kadakilaan.
+          </p>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold mb-4">Quick Links</h2>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:underline">The King's Court</a></li>
+            <li><a href="OnTheCourt.html" class="hover:underline">On the Court</a></li>
+            <li><a href="BeyondTheCourt.html" class="hover:underline">Beyond the Court</a></li>
+            <li><a href="Fanzone.html" class="hover:underline">Fanzone</a></li>
+
+          </ul>
+        </div>
+        <div>
+          <h2 class="text-lg font-bold mb-4">Follow LeBron</h2>
+          <div class="flex justify-center md:justify-start space-x-6 text-2xl"></ul>
+            <a href="https://www.facebook.com/LeBron/" class="fa fa-facebook"></a>
+            <a href="https://x.com/KingJames" class="fa fa-twitter"></a>
+            <a href="https://www.instagram.com/kingjames/" class="fa fa-instagram"></a>
+          </div>
+        </div>
+      </div>
+      <p class="text-center mt-8 text-sm">© 2023 LeBron James. All rights reserved.</p>
+    </footer>
+
+    <!-- Fullscreen Menu -->
+    <div id="fullscreenMenu" class="fixed inset-0 bg-gray-900 bg-opacity-95 text-white hidden flex justify-center items-center opacity-0 transform scale-90 transition-all duration-300 ease-in-out">
+      <nav class="flex flex-col space-y-8 text-2xl text-center">
+        <a href="index.html" class="hover:underline hover:text-yellow-400 transition duration-200">The King's Court</a>
+        <a href="OnTheCourt.html" class="hover:underline hover:text-yellow-400 transition duration-200">On the Court</a>
+        <a href="BeyondTheCourt.html" class="hover:underline hover:text-yellow-400 transition duration-200">Beyond the Court</a>
+        <a href="Fanzone.html" class="hover:underline hover:text-yellow-400 transition duration-200">Fanzone</a>
+      </nav>
+    </div>
+
+    <script src ="script.js"></script>
+  </body>
+</html>
