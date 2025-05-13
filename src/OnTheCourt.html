@@ -5,6 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      window.onload = () => {
+        enableHorizontalDragScroll('.overflow-x-auto');
+      }
+    </script>
     <link rel="stylesheet" href="input.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -35,6 +40,62 @@
 
     <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
+
+      <section
+        id="HeroBanner"
+        class="relative w-full h-screen bg-cover bg-center"
+        style="background-image: url('images/onthecourt.webp');"
+      >
+        <div class="absolute inset-0 bg-black opacity-50"></div>
+        <h1 class="absolute inset-0 flex items-center justify-center text-4xl md:text-6xl lg:text-8xl font-bold text-white">ON THE COURT</h1>
+      </section>
+
+      <section class="container mx-auto px-6 py-16 bg-gray-800 text-white rounded-lg shadow-lg text-center space-y-8">
+        <h2 class="text-2xl md:text-4xl font-bold">INTERACTIVE TIMELINE</h2>
+        
+        <!-- Scrollable Timeline Container -->
+        <div class="overflow-x-auto whitespace-nowrap px-4 py-6 border-t border-b border-gray-600">
+          <div class="inline-flex items-center space-x-12">
+
+            <!-- Timeline Point Example -->
+            <div class="relative group">
+              <div class="w-5 h-5 bg-yellow-500 rounded-full hover:scale-125 transition duration-200"></div>
+              <div class="hidden group-hover:flex flex-col absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white text-black shadow-xl p-4 w-64 z-10 rounded">
+                <img src="images/lebron2003.jpg" alt="2003 Debut" class="w-full h-32 object-cover mb-2 rounded">
+                <p><strong>2003:</strong> Drafted by the Cleveland Cavaliers as #1 pick.</p>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <div class="w-5 h-5 bg-yellow-500 rounded-full hover:scale-125 transition duration-200"></div>
+              <div class="hidden group-hover:flex flex-col absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white text-black shadow-xl p-4 w-64 z-10 rounded">
+                <img src="images/lebron2012.jpg" alt="2012 MVP" class="w-full h-32 object-cover mb-2 rounded">
+                <p><strong>2012:</strong> Wins first NBA Championship and MVP with Miami Heat.</p>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <div class="w-5 h-5 bg-yellow-500 rounded-full hover:scale-125 transition duration-200"></div>
+              <div class="hidden group-hover:flex flex-col absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white text-black shadow-xl p-4 w-64 z-10 rounded">
+                <img src="images/lebron2016.jpg" alt="2016 Title" class="w-full h-32 object-cover mb-2 rounded">
+                <p><strong>2016:</strong> Historic comeback to win title with Cavaliers.</p>
+              </div>
+            </div>
+
+            <div class="relative group">
+              <div class="w-5 h-5 bg-yellow-500 rounded-full hover:scale-125 transition duration-200"></div>
+              <div class="hidden group-hover:flex flex-col absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white text-black shadow-xl p-4 w-64 z-10 rounded">
+                <img src="images/lebron2020.jpg" alt="2020 Title" class="w-full h-32 object-cover mb-2 rounded">
+                <p><strong>2020:</strong> Wins 4th NBA title with the Los Angeles Lakers.</p>
+              </div>
+            </div>
+
+            <!-- Add more years as needed -->
+
+          </div>
+        </div>
+      </section>
+
       <!-- Placeholder content for other pages -->
       <section class="text-center">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Welcome to LeBron's Fan Page</h1>

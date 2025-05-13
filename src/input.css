@@ -39,3 +39,53 @@ nav .borg{
   font-size: 20px;
   font-weight: normal;
 }
+
+/* === Timeline Styles === */
+
+.timeline {
+  position: relative;
+  margin: 60px auto;
+  width: 80%;
+  height: 4px;
+  background-color: #ccc;
+}
+
+.timeline-point {
+  width: 20px;
+  height: 20px;
+  background-color: var(--primary-color);
+  border-radius: 50%;
+  position: absolute;
+  top: -8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.timeline-point:hover {
+  background-color: var(--secondary-color);
+}
+
+.tooltip {
+  position: absolute;
+  display: none;
+  background-color: white;
+  padding: 10px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 200px;
+  text-align: left;
+  font-family: var(--bodyfont);
+}
+
+.tooltip img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.tooltip p {
+  margin: 5px 0 0 0;
+  font-size: 14px;
+  color: var(--primary-color);
+}
