@@ -10,6 +10,20 @@
         enableHorizontalDragScroll('.overflow-x-auto');
       }
     </script>
+    <script>
+      function toggleDetail(id) {
+        // Close all other detail boxes
+        document.querySelectorAll('[id^="detail"]').forEach(div => {
+          if (div.id !== id) div.classList.add('hidden');
+        });
+
+        // Toggle the selected one
+        const detail = document.getElementById(id);
+        if (detail) {
+          detail.classList.toggle('hidden');
+        }
+      }
+    </script>
     <link rel="stylesheet" href="input.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -55,52 +69,81 @@
         
         <!-- Scrollable Timeline Container -->
         <div class="overflow-x-auto whitespace-nowrap px-4 py-6 border-t border-b border-gray-600">
-          <div class="inline-flex items-center space-x-12">
+          <div class="inline-flex items-center space-x-12 justify-center">
+            <!-- Timeline Buttons -->
+            <button onclick="toggleDetail('detail2003')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2003</button>
+            <button onclick="toggleDetail('detail2012')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2012</button>
+            <button onclick="toggleDetail('detail2016')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2016</button>
+            <button onclick="toggleDetail('detail2020')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2020</button>
+          </div>
+        </div>
 
-            <!-- Timeline Point Example -->
-            <div class="relative group">
-              <div class="w-5 h-5 bg-yellow-500 rounded-full hover:scale-125 transition duration-200"></div>
-              <div class="hidden group-hover:flex flex-col absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white text-black shadow-xl p-4 w-64 z-10 rounded">
-                <img src="images/lebron2003.jpg" alt="2003 Debut" class="w-full h-32 object-cover mb-2 rounded">
-                <p><strong>2003:</strong> Drafted by the Cleveland Cavaliers as #1 pick.</p>
-              </div>
-            </div>
+        <!-- Timeline Details Section (Positioned Below) -->
+        <div class="mt-8 space-y-4 text-left max-w-xl mx-auto">
 
-            <div class="relative group">
-              <div class="w-5 h-5 bg-yellow-500 rounded-full hover:scale-125 transition duration-200"></div>
-              <div class="hidden group-hover:flex flex-col absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white text-black shadow-xl p-4 w-64 z-10 rounded">
-                <img src="images/lebron2012.jpg" alt="2012 MVP" class="w-full h-32 object-cover mb-2 rounded">
-                <p><strong>2012:</strong> Wins first NBA Championship and MVP with Miami Heat.</p>
-              </div>
-            </div>
+          <div id="detail2003" class="hidden bg-white text-black p-4 rounded shadow">
+            <h2 class="text-xl font-bold mb-2">2003</h2>
+            <p>Drafted by the Cleveland Cavaliers as #1 pick.</p>
+          </div>
 
-            <div class="relative group">
-              <div class="w-5 h-5 bg-yellow-500 rounded-full hover:scale-125 transition duration-200"></div>
-              <div class="hidden group-hover:flex flex-col absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white text-black shadow-xl p-4 w-64 z-10 rounded">
-                <img src="images/lebron2016.jpg" alt="2016 Title" class="w-full h-32 object-cover mb-2 rounded">
-                <p><strong>2016:</strong> Historic comeback to win title with Cavaliers.</p>
-              </div>
-            </div>
+          <div id="detail2012" class="hidden bg-white text-black p-4 rounded shadow">
+            <h2 class="text-xl font-bold mb-2">2012</h2>
+            <p>Wins first NBA Championship and MVP with Miami Heat.</p>
+          </div>
 
-            <div class="relative group">
-              <div class="w-5 h-5 bg-yellow-500 rounded-full hover:scale-125 transition duration-200"></div>
-              <div class="hidden group-hover:flex flex-col absolute bottom-16 left-1/2 transform -translate-x-1/2 bg-white text-black shadow-xl p-4 w-64 z-10 rounded">
-                <img src="images/lebron2020.jpg" alt="2020 Title" class="w-full h-32 object-cover mb-2 rounded">
-                <p><strong>2020:</strong> Wins 4th NBA title with the Los Angeles Lakers.</p>
-              </div>
-            </div>
+          <div id="detail2016" class="hidden bg-white text-black p-4 rounded shadow">
+            <h2 class="text-xl font-bold mb-2">2016</h2>
+            <p>Historic comeback to win title with Cavaliers.</p>
+          </div>
 
-            <!-- Add more years as needed -->
+          <div id="detail2020" class="hidden bg-white text-black p-4 rounded shadow">
+            <h2 class="text-xl font-bold mb-2">2020</h2>
+            <p>Wins 4th NBA title with the Los Angeles Lakers.</p>
+          </div>
 
+        </div>
+
+      </section>
+
+      <!-- Awards & Achievements Section -->
+      <section class="container mx-auto px-6 py-16 bg-black text-white rounded-lg shadow-lg text-center space-y-8">
+        <h2 class="text-2xl md:text-4xl font-bold">AWARDS & ACHIEVEMENTS</h2>
+        <div class="grid md:grid-cols-3 gap-6 text-left">
+          <div id="nbaChampionships" class="bg-gray-800 p-6 rounded-lg shadow">
+            <h3 class="text-xl font-bold mb-2">NBA Championships</h3>
+            <ul id="championshipsList" class="list-disc list-inside text-gray-300"></ul>
+          </div>
+          <div id="mvpAwards" class="bg-gray-800 p-6 rounded-lg shadow">
+            <h3 class="text-xl font-bold mb-2">MVP Awards</h3>
+            <ul id="mvpList" class="list-disc list-inside text-gray-300"></ul>
+          </div>
+          <div id="otherAchievements" class="bg-gray-800 p-6 rounded-lg shadow">
+            <h3 class="text-xl font-bold mb-2">Other Achievements</h3>
+            <ul id="achievementsList" class="list-disc list-inside text-gray-300"></ul>
           </div>
         </div>
       </section>
+
+      <!-- Career Statistics Section -->
+      <section class="container mx-auto px-6 py-16 bg-gray-800 text-white rounded-lg shadow-lg text-center space-y-8">
+        <h2 class="text-2xl md:text-4xl font-bold">CAREER STATISTICS</h2>
+        <div class="grid md:grid-cols-2 gap-6 text-left">
+          <div id="careerAverages" class="bg-black p-6 rounded-lg shadow">
+            <h3 class="text-xl font-bold mb-2">Career Averages</h3>
+            <ul id="averagesList" class="list-disc list-inside text-gray-300"></ul>
+          </div>
+          <div id="careerMilestones" class="bg-black p-6 rounded-lg shadow">
+            <h3 class="text-xl font-bold mb-2">Career Milestones</h3>
+            <ul id="milestonesList" class="list-disc list-inside text-gray-300"></ul>
+          </div>
+        </div>
+      </section>
+
 
       <!-- Placeholder content for other pages -->
       <section class="text-center">
         <h1 class="text-3xl md:text-4xl font-bold text-gray-800">Welcome to LeBron's Fan Page</h1>
         <p class="text-lg text-gray-600 mt-4">
-          This is a reusable boilerplate for other pages. Replace this placeholder text with your page-specific content.
         </p>
       </section>
     </main>
@@ -147,5 +190,6 @@
     </div>
 
     <script src ="script.js"></script>
+    <script src ="onthecourt.js"></script>
   </body>
 </html>
