@@ -68,47 +68,86 @@
         <h2 class="text-2xl md:text-4xl font-bold">INTERACTIVE TIMELINE</h2>
         
         <!-- Scrollable Timeline Container -->
-        <div class="overflow-x-auto whitespace-nowrap px-4 py-6 border-t border-b border-gray-600">
-          <div class="inline-flex items-center space-x-12 justify-center">
-            <!-- Timeline Buttons -->
-            <button onclick="toggleDetail('detail2003')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2003</button>
-            <button onclick="toggleDetail('detail2004')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2004</button>
-            <button onclick="toggleDetail('detail2012')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2012</button>
-            <button onclick="toggleDetail('detail2016')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2016</button>
-            <button onclick="toggleDetail('detail2020')" class="w-12 h-12 bg-white text-black rounded-full font-bold hover:scale-110 transition">2020</button>
+        <div class="relative border-t border-b border-gray-600 px-4 py-6 overflow-x-auto">
+  
+          <!-- Horizontal line -->
+          <div class="absolute top-1/2 left-0 w-full h-px bg-gray-400 transform -translate-y-1/2 z-0"></div>
+          
+          <!-- Buttons: no extra padding or border here -->
+          <div class="relative z-10 inline-flex items-center space-x-12">
+            <div class="shrink-0 transition-transform transform hover:scale-110">
+              <button onclick="toggleDetail('detail2003')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2003</button>
+            </div>
+            <div class="shrink-0 transition-transform transform hover:scale-110">
+              <button onclick="toggleDetail('detail2004')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2004</button>
+            </div>
+            <div class="shrink-0 transition-transform transform hover:scale-110">
+              <button onclick="toggleDetail('detail2008')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2008</button>
+            </div>
+            <div class="shrink-0 transition-transform transform hover:scale-110">
+              <button onclick="toggleDetail('detail2012')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2012</button>
+            </div>
+            <div class="shrink-0 transition-transform transform hover:scale-110">
+              <button onclick="toggleDetail('detail2016')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2016</button>
+            </div>
+            <div class="shrink-0 transition-transform transform hover:scale-110">
+              <button onclick="toggleDetail('detail2020')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2020</button>
+            </div>
           </div>
         </div>
 
         <!-- Timeline Details Section (Positioned Below) -->
         <div class="mt-8 space-y-4 text-left max-w-xl mx-auto">
 
-          <div id="detail2003" class="hidden bg-white text-black p-4 rounded shadow">
-            <h3 class="text-xl font-bold mb-2">2003</h3>
-            <p>Drafted by the Cleveland Cavaliers as #1 pick.</p>
-          </div>
+            <div id="detail2003" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
+              <h2 class="text-xl font-bold mb-2 text-center">2003</h2>
+              <figure class="text-center">
+                <img src="images/timeline/lbjdraft.webp" width="200" height="200" class="mx-auto">
+                <figcaption class="mt-4 font-bold mb-2 text-center font-style">DRAFTED BY CLEVELAND CAVALIERS AS THE #1 DRAFT PICK</figcaption>
+              </figure>
+            </div>
 
-          <div id="detail2004" class = "hidden bg-white text-black p-4 rounded shadow">
-            <h2 class="text-x1 font-bold mb-2">2004</h2>
-            <center><img src="images/timeline/lebron2004roty.jpg" width="300" height="400"></center>
-            <p style="font-size:200%" align="center">WINS ROOKIE OF THE YEARko</p>
-          </div>
+            <div id="detail2004" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
+              <h2 class="text-xl font-bold mb-2 text-center">2004</h2>
+              <figure class="text-center">
+                <img src="images/timeline/lebron2004roty.jpg" width="300" height="400" class="mx-auto">
+                <figcaption class="mt-4 font-bold mb-2 text-center font-style">WINS ROOKIE OF THE YEAR</figcaption>
+              </figure>
+            </div>
 
-          <div id="detail2012" class="hidden bg-white text-black p-4 rounded shadow">
-            <h2 class="text-xl font-bold mb-2">2012</h2>
-            <p>Wins first NBA Championship and MVP with Miami Heat.</p>
-          </div>
+            <div id="detail2008" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
+              <h2 class="text-xl font-bold mb-2 text-center">2008</h2>
+              <figure class="text-center">
+                <img src="images/timeline/2008.webp" width="300" height="400" class="mx-auto">
+                <figcaption class="mt-4 font-bold mb-2 text-center font-style">CLAIMS SCORING TITLE AND FIRST ALL-STAR MVP</figcaption>
+              </figure>
+            </div>
 
-          <div id="detail2016" class="hidden bg-white text-black p-4 rounded shadow">
-            <h2 class="text-xl font-bold mb-2">2016</h2>
-            <p>Historic comeback to win title with Cavaliers.</p>
-          </div>
+            <div id="detail2012" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
+              <h2 class="text-xl font-bold mb-2 text-center">2012</h2>
+              <figure class="text-center">
+                <img src="images/timeline/lbj '12 champ.jpg" class="mx-auto max-h-64 object-contain" alt="2012 Champion">
+                <figcaption class="mt-4 font-bold mb-2 text-center font-style">WINS FIRST NBA CHAMPIONSHIP AND MVP WITH MIAMI HEAT</figcaption>
+              </figure>
+            </div>
 
-          <div id="detail2020" class="hidden bg-white text-black p-4 rounded shadow">
-            <h2 class="text-xl font-bold mb-2">2020</h2>
-            <p>Wins 4th NBA title with the Los Angeles Lakers.</p>
-          </div>
+            <div id="detail2016" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
+              <h2 class="text-xl font-bold mb-2 text-center">2016</h2>
+              <figure class="text-center">
+                <img src="images/timeline/2016.jpg" class="mx-auto max-h-64 object-contain" alt="2016 Title">
+                <figcaption class="mt-4 font-bold mb-2 text-center font-style">HISTORIC COMEBACK TO WIN TITLE WITH CAVALIERS</figcaption>
+              </figure>
+            </div>
 
-        </div>
+            <div id="detail2020" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
+              <h2 class="text-xl font-bold mb-2 text-center">2020</h2>
+              <figure class="text-center">
+                <img src="images/timeline/2020.webp" class="mx-auto max-h-64 object-contain" alt="2020 Title">
+                <figcaption class="mt-4 font-bold mb-2 text-center font-style">WINS 4TH NBA TITLE WITH THE LOS ANGELES LAKERS</figcaption>
+              </figure>
+            </div>
+
+          </div>
 
       </section>
 
@@ -145,13 +184,7 @@
           </div>
         </div>
       </section>
-<<<<<<< HEAD
-
-
-      <!-- Placeholder content for other pages -->
-=======
     </main>
->>>>>>> 1054e450aa4b5d9cfd3678b3445f7dda236fe8b7
 
      <!-- Footer -->
     <footer class="bg-black text-white p-5">
