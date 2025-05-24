@@ -52,49 +52,55 @@
     </p>
   </div>
 </section>
-
-<section id="BeyondTheCourtDetails" class="w-full h-screen bg-black text-white flex items-center justify-center">
-  <div class="max-w-6xl w-full px-4 grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
+<section id="BeyondTheCourtDetails" class="w-full min-h-screen bg-black text-white flex items-center justify-center py-16">
+  <div class="max-w-6xl w-full px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
     
     <!-- Philanthropy Card -->
-    <div>
-  <div class="flex justify-center mb-4">
-    <img src="images/offthecourt/philanthropy.jpg" alt="Philanthropy Icon" class="h-16 w-16">
-  </div>
-  <h2 class="text-xl font-semibold mb-2">Philanthropy</h2>
-  <p class="text-sm text-gray-300 mb-4">
-    The LeBron James Foundation and its commitment to education through the I PROMISE School.
-  </p>
-  <a href="https://ipromise.school/" target="_blank" rel="noopener noreferrer" class="text-white underline hover:text-gray-400">
-    Learn More →
-  </a>
-</div>
-
+    <div class="bg-gray-900 rounded-xl p-8 min-h-[360px] shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
+      <div>
+        <div class="flex justify-center mb-6">
+          <img src="images/offthecourt/philanthropy.jpg" alt="Philanthropy Icon" class="h-20 w-20 object-contain">
+        </div>
+        <h2 class="text-2xl font-semibold mb-3">Philanthropy</h2>
+        <p class="text-gray-400 text-base mb-6 leading-relaxed">
+          The LeBron James Foundation and its commitment to education through the I PROMISE School.
+        </p>
+      </div>
+      <a href="https://ipromise.school/" target="_blank" rel="noopener noreferrer" class="inline-block text-yellow-400 font-semibold hover:text-yellow-300 transition-colors">
+        Learn More &rarr;
+      </a>
+    </div>
 
     <!-- Business Card -->
-    <div>
-      <div class="flex justify-center mb-4">
-        <img src="images/offthecourt/business.jpg" alt="Business Icon" class="h-16 w-16">
+    <div class="bg-gray-900 rounded-xl p-8 min-h-[360px] shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
+      <div>
+        <div class="flex justify-center mb-6">
+          <img src="images/offthecourt/business.jpg" alt="Business Icon" class="h-20 w-20 object-contain">
+        </div>
+        <h2 class="text-2xl font-semibold mb-3">Business</h2>
+        <p class="text-gray-400 text-base mb-6 leading-relaxed">
+          From Springhill Entertainment to Blaze Pizza and beyond – LeBron’s business empire.
+        </p>
       </div>
-      <h2 class="text-xl font-semibold mb-2">Business</h2>
-      <p class="text-sm text-gray-300 mb-4">
-        From Springhill Entertainment to Blaze Pizza and beyond – LeBron’s business empire.
-      </p>
-      <a href="https://www.thomasnet.com/insights/lebron-james-companies/" target="_blank" rel="noopener noreferrer" class="text-white underline hover:text-gray-400">
-        Learn More →</a>
+      <a href="https://www.thomasnet.com/insights/lebron-james-companies/" target="_blank" rel="noopener noreferrer" class="inline-block text-yellow-400 font-semibold hover:text-yellow-300 transition-colors">
+        Learn More &rarr;
+      </a>
     </div>
 
     <!-- Family Card -->
-    <div>
-      <div class="flex justify-center mb-4">
-        <img src="images/offthecourt/family.png" alt="Family Icon" class="h-16 w-16">
+    <div class="bg-gray-900 rounded-xl p-8 min-h-[360px] shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
+      <div>
+        <div class="flex justify-center mb-6">
+          <img src="images/offthecourt/family.png" alt="Family Icon" class="h-20 w-20 object-contain">
+        </div>
+        <h2 class="text-2xl font-semibold mb-3">Family</h2>
+        <p class="text-gray-400 text-base mb-6 leading-relaxed">
+          The James family story – Savannah, Bronny, Bryce, and Zhuri – their journey together.
+        </p>
       </div>
-      <h2 class="text-xl font-semibold mb-2">Family</h2>
-      <p class="text-sm text-gray-300 mb-4">
-        The James family story – Savannah, Bronny, Bryce, and Zhuri – their journey together.
-      </p>
-      <a href="https://people.com/parents/all-about-lebron-james-children/" target="_blank" rel="noopener noreferrer" class="text-white underline hover:text-gray-400">
-        Learn More →</a>
+      <a href="https://people.com/parents/all-about-lebron-james-children/" target="_blank" rel="noopener noreferrer" class="inline-block text-yellow-400 font-semibold hover:text-yellow-300 transition-colors">
+        Learn More &rarr;
+      </a>
     </div>
 
   </div>
@@ -128,6 +134,7 @@
     </div>
   </div>
 </section>
+
 
 <section id="LatestTweets" class="w-full h-[75vh] bg-black text-white flex items-center justify-center">
   <div class="max-w-6xl w-full px-4">
@@ -239,6 +246,15 @@
   </div>
 </section>
 
+<section id="LatestNews" class="bg-white text-black py-16">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-3xl font-bold mb-8 text-center">Latest LeBron News</h2>
+    <div id="newsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- News articles will load here -->
+    </div>
+  </div>
+</section>
+
 </main>
 
 
@@ -284,8 +300,8 @@
       </nav>
     </div>
 
-    <script src ="script.js"></script>
   </body>
-  
+      <script src ="script.js"></script>
+      <script src ="onthecourt.js"></script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </html>

@@ -51,140 +51,246 @@
         <img src="images/navbar/lbjlogo.svg" alt="Logo" class="h-8" />
       </a>
     </nav>
+<!-- Main Content -->
+<main class="mx-auto">
 
-    <!-- Main Content -->
-    <main class="container mx-auto px-4 py-8">
+  <!-- Hero Banner Section -->
+  <section
+    id="HeroBanner"
+    class="relative w-full h-screen bg-cover bg-center"
+    style="background-image: url('images/onthecourt.webp');"
+  >
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <h1 class="absolute inset-0 flex items-center justify-center text-4xl md:text-6xl lg:text-8xl font-bold text-white">
+      ON THE COURT
+    </h1>
+  </section>
 
-      <section
-        id="HeroBanner"
-        class="relative w-full h-screen bg-cover bg-center"
-        style="background-image: url('images/onthecourt.webp');"
-      >
-        <div class="absolute inset-0 bg-black opacity-50"></div>
-        <h1 class="absolute inset-0 flex items-center justify-center text-4xl md:text-6xl lg:text-8xl font-bold text-white">ON THE COURT</h1>
-      </section>
+  <!-- Interactive Timeline Section -->
+  <section class="w-full px-6 py-16 bg-gray-800 text-white shadow-lg text-center space-y-8">
+    <h2 class="text-2xl md:text-4xl font-bold">INTERACTIVE TIMELINE</h2>
 
-      <section class="container mx-auto px-6 py-16 bg-gray-800 text-white rounded-lg shadow-lg text-center space-y-8">
-        <h2 class="text-2xl md:text-4xl font-bold">INTERACTIVE TIMELINE</h2>
-        
-        <!-- Scrollable Timeline Container -->
-        <div class="relative border-t border-b border-gray-600 px-4 py-6 overflow-x-auto">
+    <!-- Scrollable Timeline Buttons -->
+    <div class="relative border-t border-b border-gray-600 px-4 py-6 overflow-x-auto">
+      <div class="relative inline-flex items-center space-x-6 sm:space-x-8 md:space-x-10 lg:space-x-12 flex-wrap justify-center gap-4">
+
+        <!-- Timeline Year Buttons -->
+        <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2003')" 
+            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
+                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2003
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2004')" 
+            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
+                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2004
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2008')" 
+            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
+                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2008
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2012')" 
+            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
+                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2012
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2016')" 
+            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
+                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2016
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2020')" 
+            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
+                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2020
+          </button>
+        </div>
+
+      </div>
+    </div>
+<div class="mt-8 space-y-6 text-left mx-auto px-4 max-w-5xl">
+  <div id="detail2003" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2003</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/lbjdraft.webp" alt="2003 Draft" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        DRAFTED BY CLEVELAND CAVALIERS AS THE #1 DRAFT PICK
+      </figcaption>
+    </figure>
+  </div>
+
+  <div id="detail2004" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2004</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/lebron2004roty.jpg" alt="2004 Rookie of the Year" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        WINS ROOKIE OF THE YEAR
+      </figcaption>
+    </figure>
+  </div>
+
+  <div id="detail2008" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2008</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/2008.webp" alt="2008 Scoring Title" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        CLAIMS SCORING TITLE AND FIRST ALL-STAR MVP
+      </figcaption>
+    </figure>
+  </div>
+
+  <div id="detail2012" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2012</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/lbj '12 champ.jpg" alt="2012 Champion" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        WINS FIRST NBA CHAMPIONSHIP AND MVP WITH MIAMI HEAT
+      </figcaption>
+    </figure>
+  </div>
+
+  <div id="detail2016" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2016</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/2016.jpg" alt="2016 Title" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        HISTORIC COMEBACK TO WIN TITLE WITH CAVALIERS
+      </figcaption>
+    </figure>
+  </div>
+
+  <div id="detail2020" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2020</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/2020.webp" alt="2020 Title" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        WINS 4TH NBA TITLE WITH THE LOS ANGELES LAKERS
+      </figcaption>
+    </figure>
+  </div>
+</div>
+
+  </section>
+<section class="w-full px-6 py-16 bg-black text-white shadow-lg text-center space-y-10">
+  <h2 class="text-3xl md:text-5xl font-extrabold tracking-wide uppercase text-white-400">Awards & Achievements</h2>
+  <div class="grid md:grid-cols-3 gap-8 text-left max-w-6xl mx-auto">
+
+    <div id="nbaChampionships" 
+         class="bg-gray-900 rounded-lg p-8 shadow-lg shadow-yellow-600/25 hover:shadow-yellow-500/40 transition-shadow duration-300">
+      <div class="flex items-center mb-4 space-x-3">
+        <!-- Trophy icon (gold) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-400" fill="currentColor" viewBox="0 0 24 24" >
+          <path d="M7 3v2H5v2a5 5 0 005 5h2a5 5 0 005-5V5h-2V3H7zm10 4a3 3 0 01-3 3H10a3 3 0 01-3-3V6h10v1z"/>
+          <path d="M9 12v7H7v2h10v-2h-2v-7H9z"/>
+        </svg>
+        <h3 class="text-2xl font-semibold text-yellow-400">NBA Championships</h3>
+      </div>
+      <ul id="championshipsList" class="list-disc list-inside text-white space-y-1"></ul>
+    </div>
+
+    <div id="mvpAwards" 
+         class="bg-gray-900 rounded-lg p-8 shadow-lg shadow-yellow-600/25 hover:shadow-yellow-500/40 transition-shadow duration-300">
+      <div class="flex items-center mb-4 space-x-3">
+        <!-- Star icon (gold) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+        </svg>
+        <h3 class="text-2xl font-semibold text-yellow-400">MVP Awards</h3>
+      </div>
+      <ul id="mvpList" class="list-disc list-inside text-white space-y-1"></ul>
+    </div>
+
+    <div id="otherAchievements" 
+         class="bg-gray-900 rounded-lg p-8 shadow-lg shadow-yellow-600/25 hover:shadow-yellow-500/40 transition-shadow duration-300">
+      <div class="flex items-center mb-4 space-x-3">
+        <!-- Medal icon (gold) -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2a7 7 0 017 7c0 3.31-2.69 6-6 6s-6-2.69-6-6a7 7 0 017-7zm0 16a9 9 0 00-7.5 3.94L5 23h14l.5-1.06A9 9 0 0012 18z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        <h3 class="text-2xl font-semibold text-yellow-400">Other Achievements</h3>
+      </div>
+      <ul id="achievementsList" class="list-disc list-inside text-white space-y-1"></ul>
+    </div>
+
+  </div>
+</section>
+
+<section class="w-full px-6 py-16 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white shadow-lg text-left space-y-12">
+<h2 class="text-3xl md:text-5xl font-extrabold tracking-wide uppercase text-white drop-shadow-lg text-center">
+    Career Statistics
+  </h2>
   
-          <!-- Horizontal line -->
-          <div class="absolute top-1/2 left-0 w-full h-px bg-gray-400 transform -translate-y-1/2 z-0"></div>
-          
-          <!-- Buttons: no extra padding or border here -->
-          <div class="relative z-10 inline-flex items-center space-x-12">
-            <div class="shrink-0 transition-transform transform hover:scale-110">
-              <button onclick="toggleDetail('detail2003')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2003</button>
-            </div>
-            <div class="shrink-0 transition-transform transform hover:scale-110">
-              <button onclick="toggleDetail('detail2004')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2004</button>
-            </div>
-            <div class="shrink-0 transition-transform transform hover:scale-110">
-              <button onclick="toggleDetail('detail2008')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2008</button>
-            </div>
-            <div class="shrink-0 transition-transform transform hover:scale-110">
-              <button onclick="toggleDetail('detail2012')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2012</button>
-            </div>
-            <div class="shrink-0 transition-transform transform hover:scale-110">
-              <button onclick="toggleDetail('detail2016')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2016</button>
-            </div>
-            <div class="shrink-0 transition-transform transform hover:scale-110">
-              <button onclick="toggleDetail('detail2020')" class="w-12 h-12 bg-white text-black rounded-full font-bold">2020</button>
-            </div>
-          </div>
-        </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto px-4 md:px-0">
 
-        <!-- Timeline Details Section (Positioned Below) -->
-        <div class="mt-8 space-y-4 text-left max-w-xl mx-auto">
+    <div id="careerAverages" 
+         class="bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-yellow-500/50 transition-shadow duration-300">
+      <h3 class="text-2xl font-semibold mb-6 border-b border-yellow-400 pb-3">
+        Career Averages
+      </h3>
+      <ul id="averagesList" class="list-disc list-inside text-white space-y-3 text-lg leading-relaxed">
+        <li>Points per Game: <span class="font-bold">27.2</span></li>
+        <li>Rebounds per Game: <span class="font-bold">7.5</span></li>
+        <li>Assists per Game: <span class="font-bold">7.3</span></li>
+        <li>Steals per Game: <span class="font-bold">1.6</span></li>
+        <li>Blocks per Game: <span class="font-bold">0.8</span></li>
+        <li>Field Goal Percentage: <span class="font-bold">50.4%</span></li>
+        <li>Free Throw Percentage: <span class="font-bold">73.4%</span></li>
+        <li>Three-Point Percentage: <span class="font-bold">34.6%</span></li>
+      </ul>
+    </div>
 
-            <div id="detail2003" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
-              <h2 class="text-xl font-bold mb-2 text-center">2003</h2>
-              <figure class="text-center">
-                <img src="images/timeline/lbjdraft.webp" width="200" height="200" class="mx-auto">
-                <figcaption class="mt-4 font-bold mb-2 text-center font-style">DRAFTED BY CLEVELAND CAVALIERS AS THE #1 DRAFT PICK</figcaption>
-              </figure>
-            </div>
+    <div id="careerMilestones" 
+         class="bg-gray-900 rounded-xl p-8 shadow-lg hover:shadow-yellow-500/50 transition-shadow duration-300">
+      <h3 class="text-2xl font-semibold mb-6 border-b border-yellow-400 pb-3">
+        Career Milestones
+      </h3>
+      <ul id="milestonesList" class="list-disc list-inside text-white space-y-3 text-lg leading-relaxed">
+        <li>4× NBA Champion (2012, 2013, 2016, 2020)</li>
+        <li>4× NBA MVP (2009, 2010, 2012, 2013)</li>
+        <li>17× NBA All-Star</li>
+        <li>2× Olympic Gold Medalist (2008, 2012)</li>
+        <li>All-Time Leading Scorer in NBA Playoffs</li>
+        <li>Scored 50+ points in multiple playoff games</li>
+        <li>Youngest player to reach 30,000 career points</li>
+        <li>NBA Finals MVP 4 times</li>
+      </ul>
+    </div>
 
-            <div id="detail2004" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
-              <h2 class="text-xl font-bold mb-2 text-center">2004</h2>
-              <figure class="text-center">
-                <img src="images/timeline/lebron2004roty.jpg" width="300" height="400" class="mx-auto">
-                <figcaption class="mt-4 font-bold mb-2 text-center font-style">WINS ROOKIE OF THE YEAR</figcaption>
-              </figure>
-            </div>
+  </div>
+</section>
 
-            <div id="detail2008" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
-              <h2 class="text-xl font-bold mb-2 text-center">2008</h2>
-              <figure class="text-center">
-                <img src="images/timeline/2008.webp" width="300" height="400" class="mx-auto">
-                <figcaption class="mt-4 font-bold mb-2 text-center font-style">CLAIMS SCORING TITLE AND FIRST ALL-STAR MVP</figcaption>
-              </figure>
-            </div>
+</main>
 
-            <div id="detail2012" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
-              <h2 class="text-xl font-bold mb-2 text-center">2012</h2>
-              <figure class="text-center">
-                <img src="images/timeline/lbj '12 champ.jpg" class="mx-auto max-h-64 object-contain" alt="2012 Champion">
-                <figcaption class="mt-4 font-bold mb-2 text-center font-style">WINS FIRST NBA CHAMPIONSHIP AND MVP WITH MIAMI HEAT</figcaption>
-              </figure>
-            </div>
-
-            <div id="detail2016" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
-              <h2 class="text-xl font-bold mb-2 text-center">2016</h2>
-              <figure class="text-center">
-                <img src="images/timeline/2016.jpg" class="mx-auto max-h-64 object-contain" alt="2016 Title">
-                <figcaption class="mt-4 font-bold mb-2 text-center font-style">HISTORIC COMEBACK TO WIN TITLE WITH CAVALIERS</figcaption>
-              </figure>
-            </div>
-
-            <div id="detail2020" class="hidden bg-white text-black p-4 rounded shadow h-[500px] overflow-y-auto">
-              <h2 class="text-xl font-bold mb-2 text-center">2020</h2>
-              <figure class="text-center">
-                <img src="images/timeline/2020.webp" class="mx-auto max-h-64 object-contain" alt="2020 Title">
-                <figcaption class="mt-4 font-bold mb-2 text-center font-style">WINS 4TH NBA TITLE WITH THE LOS ANGELES LAKERS</figcaption>
-              </figure>
-            </div>
-
-          </div>
-
-      </section>
-
-      <!-- Awards & Achievements Section -->
-      <section class="container mx-auto px-6 py-16 bg-black text-white rounded-lg shadow-lg text-center space-y-8">
-        <h2 class="text-2xl md:text-4xl font-bold">AWARDS & ACHIEVEMENTS</h2>
-        <div class="grid md:grid-cols-3 gap-6 text-left">
-          <div id="nbaChampionships" class="bg-gray-800 p-6 rounded-lg shadow">
-            <h3 class="text-xl font-bold mb-2">NBA Championships</h3>
-            <ul id="championshipsList" class="list-disc list-inside text-gray-300"></ul>
-          </div>
-          <div id="mvpAwards" class="bg-gray-800 p-6 rounded-lg shadow">
-            <h3 class="text-xl font-bold mb-2">MVP Awards</h3>
-            <ul id="mvpList" class="list-disc list-inside text-gray-300"></ul>
-          </div>
-          <div id="otherAchievements" class="bg-gray-800 p-6 rounded-lg shadow">
-            <h3 class="text-xl font-bold mb-2">Other Achievements</h3>
-            <ul id="achievementsList" class="list-disc list-inside text-gray-300"></ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- Career Statistics Section -->
-      <section class="container mx-auto px-6 py-16 bg-gray-800 text-white rounded-lg shadow-lg text-center space-y-8">
-        <h2 class="text-2xl md:text-4xl font-bold">CAREER STATISTICS</h2>
-        <div class="grid md:grid-cols-2 gap-6 text-left">
-          <div id="careerAverages" class="bg-black p-6 rounded-lg shadow">
-            <h3 class="text-xl font-bold mb-2">Career Averages</h3>
-            <ul id="averagesList" class="list-disc list-inside text-gray-300"></ul>
-          </div>
-          <div id="careerMilestones" class="bg-black p-6 rounded-lg shadow">
-            <h3 class="text-xl font-bold mb-2">Career Milestones</h3>
-            <ul id="milestonesList" class="list-disc list-inside text-gray-300"></ul>
-          </div>
-        </div>
-      </section>
-    </main>
 
      <!-- Footer -->
     <footer class="bg-black text-white p-5">
