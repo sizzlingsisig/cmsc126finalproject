@@ -16,6 +16,56 @@
                  [&>div]:after:-rotate-45;
         }
       }
+      @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.5); }
+        }
+        
+        @keyframes gradient-shift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .float-animation { animation: float 6s ease-in-out infinite; }
+        .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+        .gradient-animated {
+            background: linear-gradient(-45deg, #1e293b, #0f172a, #1e1b4b, #312e81);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease infinite;
+        }
+        
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-15px) scale(1.02);
+        }
+        
+        .glass-effect {
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .text-glow {
+            text-shadow: 0 0 20px rgba(251, 191, 36, 0.5);
+        }
+        
+        .number-counter {
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    
     </style>
   </head>
   <body class="bg-gray-100">
@@ -44,216 +94,355 @@
   <div class="absolute inset-0 bg-black opacity-50"></div>
 
   <div class="absolute bottom-10 left-10 text-left max-w-full">
-    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white">
-      BEYOND THE COURT
-    </h1>
+   <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white" style="text-shadow: 2px 2px 6px black;">
+  BEYOND THE COURT
+</h1>
+
     <p class="text-sm md:text-lg text-gray-200 mt-2 leading-snug max-w-[75%]">
       Exploring the philanthropy, business ventures, and family life that define a legacy, beyond basketball.
     </p>
   </div>
 </section>
-<section id="BeyondTheCourtDetails" class="w-full min-h-screen bg-black text-white flex items-center justify-center py-16">
-  <div class="max-w-6xl w-full px-6 grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+
+<section id="BeyondTheCourtDetails" class="w-full min-h-screen gradient-animated text-white flex items-center justify-center py-20 relative overflow-hidden">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-yellow-400 rounded-full opacity-5 float-animation"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-48 h-48 bg-purple-500 rounded-full opacity-5 float-animation" style="animation-delay: -2s;"></div>
+    <div class="absolute top-1/2 right-1/3 w-32 h-32 bg-blue-500 rounded-full opacity-5 float-animation" style="animation-delay: -4s;"></div>
+  </div>
+  
+  <div class="max-w-7xl w-full px-6 relative z-10">
+    <!-- Header -->
+    <div class="text-center mb-16">
+   <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white">
+  Beyond The Court
+</h1>
+
+      <p class="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+        Discover the man behind the legend – his impact on communities, business ventures, and family legacy
+      </p>
+      <div class="w-24 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mt-8 rounded-full"></div>
+    </div>
     
-    <!-- Philanthropy Card -->
-    <div class="bg-gray-900 rounded-xl p-8 min-h-[360px] shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
-      <div>
-        <div class="flex justify-center mb-6">
-          <img src="images/offthecourt/philanthropy.jpg" alt="Philanthropy Icon" class="h-20 w-20 object-contain">
-        </div>
-        <h2 class="text-2xl font-semibold mb-3">Philanthropy</h2>
-        <p class="text-gray-400 text-base mb-6 leading-relaxed">
-          The LeBron James Foundation and its commitment to education through the I PROMISE School.
-        </p>
-      </div>
-      <a href="https://ipromise.school/" target="_blank" rel="noopener noreferrer" class="inline-block text-yellow-400 font-semibold hover:text-yellow-300 transition-colors">
-        Learn More &rarr;
-      </a>
-    </div>
-
-    <!-- Business Card -->
-    <div class="bg-gray-900 rounded-xl p-8 min-h-[360px] shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
-      <div>
-        <div class="flex justify-center mb-6">
-          <img src="images/offthecourt/business.jpg" alt="Business Icon" class="h-20 w-20 object-contain">
-        </div>
-        <h2 class="text-2xl font-semibold mb-3">Business</h2>
-        <p class="text-gray-400 text-base mb-6 leading-relaxed">
-          From Springhill Entertainment to Blaze Pizza and beyond – LeBron’s business empire.
-        </p>
-      </div>
-      <a href="https://www.thomasnet.com/insights/lebron-james-companies/" target="_blank" rel="noopener noreferrer" class="inline-block text-yellow-400 font-semibold hover:text-yellow-300 transition-colors">
-        Learn More &rarr;
-      </a>
-    </div>
-
-    <!-- Family Card -->
-    <div class="bg-gray-900 rounded-xl p-8 min-h-[360px] shadow-lg transform transition-transform duration-300 hover:scale-105 hover:shadow-2xl flex flex-col justify-between">
-      <div>
-        <div class="flex justify-center mb-6">
-          <img src="images/offthecourt/family.png" alt="Family Icon" class="h-20 w-20 object-contain">
-        </div>
-        <h2 class="text-2xl font-semibold mb-3">Family</h2>
-        <p class="text-gray-400 text-base mb-6 leading-relaxed">
-          The James family story – Savannah, Bronny, Bryce, and Zhuri – their journey together.
-        </p>
-      </div>
-      <a href="https://people.com/parents/all-about-lebron-james-children/" target="_blank" rel="noopener noreferrer" class="inline-block text-yellow-400 font-semibold hover:text-yellow-300 transition-colors">
-        Learn More &rarr;
-      </a>
-    </div>
-
-  </div>
-</section>
-
-<section id="ImpactStats" class="bg-[#0f172a] text-white py-40">
-  <div class="max-w-6xl mx-auto px-4 text-center">
-    <h2 class="text-3xl md:text-4xl font-bold mb-6">Making An Impact</h2>
-    <p class="text-gray-300 text-sm md:text-base mb-15">
-      LeBron’s influence extends far beyond basketball, creating<br class="hidden md:inline"> 
-      positive change across America.
-    </p>
-
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mt-10">
-      <div>
-        <p class="text-3xl font-semibold">1,600+</p>
-        <p class="text-sm text-gray-400 mt-1">Students Supported</p>
-      </div>
-      <div>
-        <p class="text-3xl font-semibold">$100M+</p>
-        <p class="text-sm text-gray-400 mt-1">Philanthropic Investments</p>
-      </div>
-      <div>
-        <p class="text-3xl font-semibold">15+</p>
-        <p class="text-sm text-gray-400 mt-1">Business Ventures</p>
-      </div>
-      <div>
-        <p class="text-3xl font-semibold">20+</p>
-        <p class="text-sm text-gray-400 mt-1">Years of Giving Back</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="LatestTweets" class="w-full h-[75vh] bg-black text-white flex items-center justify-center">
-  <div class="max-w-6xl w-full px-4">
-    <h2 class="text-2xl font-semibold mb-8">Latest Tweets</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
       
-      <!-- Tweet Embed 1 -->
-      <div class="bg-gray-800 p-2 rounded-lg">
-        <blockquote class="twitter-tweet" data-theme="dark">
-          <a href="https://twitter.com/KingJames/status/1237972755275870208"></a>
-        </blockquote>
+      <!-- Philanthropy Card -->
+      <div class="glass-effect rounded-2xl p-8 min-h-[420px] card-hover group relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-yellow-400/10 to-orange-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 flex flex-col justify-between h-full">
+          <div>
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <div class="absolute inset-0 bg-yellow-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div class="relative w-24 h-24 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-full flex items-center justify-center text-3xl">
+                  💝
+                </div>
+              </div>
+            </div>
+            <h2 class="text-3xl font-bold mb-4 text-center bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent">
+              Philanthropy
+            </h2>
+            <p class="text-gray-300 text-lg mb-8 leading-relaxed text-center">
+              The LeBron James Foundation and its commitment to education through the revolutionary I PROMISE School initiative.
+            </p>
+          </div>
+          <div class="text-center">
+            <a href="https://ipromise.school/" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-yellow-400 to-yellow-500 text-black font-bold rounded-full hover:shadow-lg hover:shadow-yellow-400/25 transition-all duration-300 group-hover:scale-105">
+              <span>Explore Impact</span>
+              <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
 
-      <!-- Tweet Embed 2 -->
-      <div class="bg-gray-800 p-2 rounded-lg">
-        <blockquote class="twitter-tweet" data-theme="dark">
-          <a href="https://twitter.com/KingJames/status/1298721240748711936"></a>
-        </blockquote>
+      <!-- Business Card -->
+      <div class="glass-effect rounded-2xl p-8 min-h-[420px] card-hover group relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-400/10 to-purple-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 flex flex-col justify-between h-full">
+          <div>
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <div class="absolute inset-0 bg-blue-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div class="relative w-24 h-24 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-3xl">
+                  💼
+                </div>
+              </div>
+            </div>
+            <h2 class="text-3xl font-bold mb-4 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
+              Business Empire
+            </h2>
+            <p class="text-gray-300 text-lg mb-8 leading-relaxed text-center">
+              From SpringHill Entertainment to Blaze Pizza and beyond – building a diverse portfolio of successful ventures.
+            </p>
+          </div>
+          <div class="text-center">
+            <a href="https://www.thomasnet.com/insights/lebron-james-companies/" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-400 to-purple-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-blue-400/25 transition-all duration-300 group-hover:scale-105">
+              <span>View Ventures</span>
+              <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
 
-      <!-- Tweet Embed 3 -->
-      <div class="bg-gray-800 p-2 rounded-lg">
-        <blockquote class="twitter-tweet" data-theme="dark">
-          <a href="https://twitter.com/KingJames/status/911610455877021697"></a>
-        </blockquote>
+      <!-- Family Card -->
+      <div class="glass-effect rounded-2xl p-8 min-h-[420px] card-hover group relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-br from-pink-400/10 to-rose-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+        <div class="relative z-10 flex flex-col justify-between h-full">
+          <div>
+            <div class="flex justify-center mb-8">
+              <div class="relative">
+                <div class="absolute inset-0 bg-pink-400 rounded-full blur-lg opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+                <div class="relative w-24 h-24 bg-gradient-to-br from-pink-400 to-rose-500 rounded-full flex items-center justify-center text-3xl">
+                  👨‍👩‍👧‍👦
+                </div>
+              </div>
+            </div>
+            <h2 class="text-3xl font-bold mb-4 text-center bg-gradient-to-r from-pink-400 to-rose-400 bg-clip-text text-transparent">
+              Family Legacy
+            </h2>
+            <p class="text-gray-300 text-lg mb-8 leading-relaxed text-center">
+              The James family story – Savannah, Bronny, Bryce, and Zhuri – their inspiring journey together.
+            </p>
+          </div>
+          <div class="text-center">
+            <a href="https://people.com/parents/all-about-lebron-james-children/" target="_blank" rel="noopener noreferrer" 
+               class="inline-flex items-center px-6 py-3 bg-gradient-to-r from-pink-400 to-rose-500 text-white font-bold rounded-full hover:shadow-lg hover:shadow-pink-400/25 transition-all duration-300 group-hover:scale-105">
+              <span>Meet The Family</span>
+              <svg class="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+              </svg>
+            </a>
+          </div>
+        </div>
       </div>
 
     </div>
   </div>
 </section>
 
-<section id="LatestVideos" class="w-full min-h-[90vh] bg-[#0f172a] text-white flex flex-col items-center justify-center py-10">
-  <div class="max-w-7xl w-full px-4">
-    <h2 class="text-3xl font-semibold text-center mb-12">Latest Videos</h2>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-      <div class="aspect-square">
-        <iframe
-          class="rounded-lg w-full h-full"
-          src="https://www.youtube.com/embed/-9lP95Qo-I0?si=nkl_-2m4phYt48Bh"
-          title="YouTube video player"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="aspect-square">
-        <iframe
-          class="rounded-lg w-full h-full"
-          src="https://www.youtube.com/embed/CScFDI9E4xo?si=cOePMXFuO3mglI5E"
-          title="YouTube video player"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="aspect-square">
-        <iframe
-          class="rounded-lg w-full h-full"
-          src="https://www.youtube.com/embed/IoOBnSm9Snk?si=5NIvLVX-LAmcG5j6"
-          title="YouTube video player"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="aspect-square">
-        <iframe
-          class="rounded-lg w-full h-full"
-          src="https://www.youtube.com/embed/-yOdEyCfKHY?si=K802Le2y1ChxPP2L"
-          title="YouTube video player"
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="aspect-square">
-        <iframe
-          class="rounded-lg w-full h-full"
-          src="https://www.youtube.com/embed/OB69zw86q4s?si=4p1lFBfJiPJ4S9LA"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-      <div class="aspect-square">
-        <iframe
-          class="rounded-lg w-full h-full"
-          src="https://www.youtube.com/embed/Ny0GJmTV7g8?si=-8oYs_O7jf_pZ39t"
-          title="YouTube video player"
-          frameborder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-      </div>
-
-    </div>
-
-    <div class="flex justify-center mt-12">
-      <a href="https://www.youtube.com/results?search_query=lebron+james" target="_blank"
-         class="bg-gray-200 text-black px-8 py-3 rounded-full hover:bg-white transition font-semibold">
-        View All Videos →
-      </a>
-    </div>
+<section id="ImpactStats" class="bg-gradient-to-br from-slate-900 via-gray-900 to-slate-800 text-white py-32 relative overflow-hidden">
+  <!-- Background decoration -->
+  <div class="absolute inset-0">
+    <div class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-yellow-400/5 to-transparent"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-yellow-400 rounded-full blur-3xl opacity-5"></div>
   </div>
+  
+  <div class="max-w-7xl mx-auto px-6 text-center relative z-10">
+    <!-- Header Section -->
+    <div class="mb-20">
+    <h2 class="text-5xl md:text-6xl font-bold mb-8 ">
+  <span class="text-white">
+    Making An Impact
+  </span>
+</h2>
+
+      <p class="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed mb-8">
+        LeBron's influence extends far beyond basketball, creating lasting positive change across communities nationwide.
+      </p>
+      <div class="w-32 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto rounded-full"></div>
+    </div>
+
+    <!-- Stats Grid -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12">
+      
+<div class="group h-full">
+  <div class="h-full flex flex-col justify-between bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/10 card-hover">
+      <div class="text-center">
+            <p class="text-5xl md:text-6xl font-bold mb-3 number-counter pulse-glow">1,600+</p>
+            <p class="text-lg text-gray-300 font-medium">Students Supported</p>
+            <div class="w-16 h-1 bg-gradient-to-r from-yellow-400 to-yellow-600 mx-auto mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+      
+<div class="group h-full">
+  <div class="h-full flex flex-col justify-between bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/10 card-hover">
+      <div class="text-center">
+            <p class="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent">$100M+</p>
+            <p class="text-lg text-gray-300 font-medium">Philanthropic Investments</p>
+            <div class="w-16 h-1 bg-gradient-to-r from-green-400 to-emerald-500 mx-auto mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+      
+<div class="group h-full">
+  <div class="h-full flex flex-col justify-between bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/10 card-hover">          <div class="text-center">
+            <p class="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">15+</p>
+            <p class="text-lg text-gray-300 font-medium">Business Ventures</p>
+            <div class="w-16 h-1 bg-gradient-to-r from-blue-400 to-purple-500 mx-auto mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+      
+<div class="group h-full">
+  <div class="h-full flex flex-col justify-between bg-gradient-to-br from-slate-800/50 to-slate-700/50 backdrop-blur-sm rounded-2xl p-8 border border-slate-600/30 hover:border-yellow-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-yellow-400/10 card-hover">          <div class="text-center">
+            <p class="text-5xl md:text-6xl font-bold mb-3 bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent">20+</p>
+            <p class="text-lg text-gray-300 font-medium">Years of Giving Back</p>
+            <div class="w-16 h-1 bg-gradient-to-r from-orange-400 to-red-500 mx-auto mt-4 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+    
+  
 </section>
 
-<section id="LatestNews" class="bg-white text-black py-16">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-3xl font-bold mb-8 text-center">Latest LeBron News</h2>
-    <div id="newsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      <!-- News articles will load here -->
-    </div>
-  </div>
-</section>
+
+      <!-- Latest Tweets -->
+      <section id="LatestTweets" class="w-full min-h-screen bg-gradient-to-b from-gray-900 to-black text-white flex items-center justify-center py-20">
+        <div class="max-w-7xl w-full px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Latest from The King</h2>
+            <p class="text-xl text-gray-400">Stay updated with LeBron's thoughts and moments</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Tweet Embed 1 -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-2xl border border-gray-700 hover:border-yellow-400 transition-all duration-300 hover:scale-105">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://twitter.com/KingJames/status/1237972755275870208"></a>
+              </blockquote>
+            </div>
+
+            <!-- Tweet Embed 2 -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-2xl border border-gray-700 hover:border-yellow-400 transition-all duration-300 hover:scale-105">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://twitter.com/KingJames/status/1298721240748711936"></a>
+              </blockquote>
+            </div>
+
+            <!-- Tweet Embed 3 -->
+            <div class="bg-gradient-to-br from-gray-800 to-gray-900 p-6 rounded-2xl border border-gray-700 hover:border-yellow-400 transition-all duration-300 hover:scale-105">
+              <blockquote class="twitter-tweet" data-theme="dark">
+                <a href="https://twitter.com/KingJames/status/911610455877021697"></a>
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- Latest Videos -->
+      <section id="LatestVideos" class="w-full min-h-screen bg-gradient-to-br from-black via-gray-900 to-purple-900 text-white flex flex-col items-center justify-center py-20">
+        <div class="max-w-7xl w-full px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-6">Latest Videos</h2>
+            <p class="text-xl text-gray-400">Watch LeBron's latest highlights and moments</p>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500">
+              <div class="aspect-square relative">
+                <iframe
+                  class="rounded-2xl w-full h-full border-2 border-gray-700 group-hover:border-yellow-400 transition-colors duration-300"
+                  src="https://www.youtube.com/embed/-9lP95Qo-I0?si=nkl_-2m4phYt48Bh"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500">
+              <div class="aspect-square relative">
+                <iframe
+                  class="rounded-2xl w-full h-full border-2 border-gray-700 group-hover:border-yellow-400 transition-colors duration-300"
+                  src="https://www.youtube.com/embed/CScFDI9E4xo?si=cOePMXFuO3mglI5E"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500">
+              <div class="aspect-square relative">
+                <iframe
+                  class="rounded-2xl w-full h-full border-2 border-gray-700 group-hover:border-yellow-400 transition-colors duration-300"
+                  src="https://www.youtube.com/embed/IoOBnSm9Snk?si=5NIvLVX-LAmcG5j6"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500">
+              <div class="aspect-square relative">
+                <iframe
+                  class="rounded-2xl w-full h-full border-2 border-gray-700 group-hover:border-yellow-400 transition-colors duration-300"
+                  src="https://www.youtube.com/embed/-yOdEyCfKHY?si=K802Le2y1ChxPP2L"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allowfullscreen
+                ></iframe>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500">
+              <div class="aspect-square relative">
+                <iframe
+                  class="rounded-2xl w-full h-full border-2 border-gray-700 group-hover:border-yellow-400 transition-colors duration-300"
+                  src="https://www.youtube.com/embed/OB69zw86q4s?si=4p1lFBfJiPJ4S9LA"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              </div>
+            </div>
+
+            <div class="group relative overflow-hidden rounded-2xl hover:scale-105 transition-all duration-500">
+              <div class="aspect-square relative">
+                <iframe
+                  class="rounded-2xl w-full h-full border-2 border-gray-700 group-hover:border-yellow-400 transition-colors duration-300"
+                  src="https://www.youtube.com/embed/Ny0GJmTV7g8?si=-8oYs_O7jf_pZ39t"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex justify-center mt-16">
+            <a href="https://www.youtube.com/results?search_query=lebron+james" target="_blank"
+               class="bg-gradient-to-r from-yellow-400 to-yellow-600 text-black px-10 py-4 rounded-full hover:scale-105 transition-all duration-300 font-bold text-lg pulse-glow">
+              View All Videos →
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest News -->
+      <section id="LatestNews" class="bg-gradient-to-br from-white to-gray-100 text-black py-20">
+        <div class="max-w-6xl mx-auto px-6">
+          <div class="text-center mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-gray-800 to-black bg-clip-text text-transparent">Latest LeBron News</h2>
+            <p class="text-xl text-gray-600">Stay informed with the latest updates and stories</p>
+          </div>
+          <div id="newsContainer" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- News articles will load here -->
+          </div>
+        </div>
+      </section>
+    </main>
 
 </main>
 
@@ -291,7 +480,7 @@
     </footer>
     
     <!-- Fullscreen Menu -->
-    <div id="fullscreenMenu" class="fixed inset-0 bg-gray-900 bg-opacity-95 text-white hidden flex justify-center items-center opacity-0 transform scale-90 transition-all duration-300 ease-in-out">
+    <div id="fullscreenMenu" class="fixed inset-0 bg-gray-900 bg-opacity-95 text-white hidden flex justify-center items-center opacity-0 transform scale-90 transition-all duration-300 ease-in-out z-20">
       <nav class="fullmenu flex flex-col space-y-8 text-2xl text-center">
         <a href="index.html" class="hover:underline hover:text-yellow-400 transition duration-200">The King's Court</a>
         <a href="OnTheCourt.html" class="hover:underline hover:text-yellow-400 transition duration-200">On the Court</a>
@@ -302,6 +491,6 @@
 
   </body>
       <script src ="script.js"></script>
-      <script src ="onthecourt.js"></script>
+      <script src ="beyondthecourt.js"></script>
   <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </html>
