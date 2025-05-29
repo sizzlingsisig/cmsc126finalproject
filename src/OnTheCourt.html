@@ -20,7 +20,13 @@
         // Toggle the selected one
         const detail = document.getElementById(id);
         if (detail) {
+          const wasHidden = detail.classList.contains('hidden');
           detail.classList.toggle('hidden');
+
+          // Scroll only if it's now visible
+          if (wasHidden) {
+            detail.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
         }
       }
     </script>
@@ -33,6 +39,20 @@
           @apply [&>div]:h-0 [&>div]:bg-black [&>div]:before:translate-y-0  
                  [&>div]:before:rotate-45 [&>div]:after:translate-y-0 
                  [&>div]:after:-rotate-45;
+                 
+              .glow-gold {
+                @apply shadow-[0_0_15px_4px_rgba(255,215,0,0.7)];
+                animation: pulse-glow 2s infinite;
+              }
+
+              @keyframes pulse-glow {
+                0%, 100% {
+                  box-shadow: 0 0 15px 4px rgba(255, 215, 0, 0.7);
+                }
+                50% {
+                  box-shadow: 0 0 20px 8px rgba(255, 215, 0, 1);
+                }
+              }
         }
       }
     </style>
@@ -68,63 +88,100 @@
 
   <!-- Interactive Timeline Section -->
   <section class="w-full px-6 py-16 bg-gray-800 text-white shadow-lg text-center space-y-8">
-    <h2 class="text-2xl md:text-4xl font-bold">INTERACTIVE TIMELINE</h2>
+    <h2 class="text-3xl md:text-5xl font-extrabold tracking-wide uppercase text-white-400">INTERACTIVE TIMELINE</h2>
 
     <!-- Scrollable Timeline Buttons -->
-    <div class="relative border-t border-b border-gray-600 px-4 py-6 overflow-x-auto">
-      <div class="relative inline-flex items-center space-x-6 sm:space-x-8 md:space-x-10 lg:space-x-12 flex-wrap justify-center gap-4">
+    <div class="relative px-0 py-12 overflow-x-auto">
+  <!-- Horizontal line -->
+      <div class="absolute top-1/2 left-0 right-0 h-1 bg-gray-500 z-0"></div>
+
+      <div class="relative inline-flex items-center space-x-6 sm:space-x-8 md:space-x-10 lg:space-x-12 flex-wrap justify-center gap-4 z-10">
 
         <!-- Timeline Year Buttons -->
         <div class="shrink-0 transition-transform transform hover:scale-110">
           <button onclick="toggleDetail('detail2003')" 
-            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
-                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
-                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
             2003
           </button>
         </div>
 
         <div class="shrink-0 transition-transform transform hover:scale-110">
           <button onclick="toggleDetail('detail2004')" 
-            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
-                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
-                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
             2004
           </button>
         </div>
 
         <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2007')" 
+           class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2007
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
           <button onclick="toggleDetail('detail2008')" 
-            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
-                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
-                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+           class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
             2008
           </button>
         </div>
 
         <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2009')" 
+           class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2009
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2010')" 
+           class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2010
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
           <button onclick="toggleDetail('detail2012')" 
-            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
-                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
-                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
             2012
           </button>
         </div>
 
         <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2013')" 
+            class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2013
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
           <button onclick="toggleDetail('detail2016')" 
-            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
-                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
-                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
             2016
           </button>
         </div>
 
         <div class="shrink-0 transition-transform transform hover:scale-110">
+          <button onclick="toggleDetail('detail2018')" 
+            class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            2018
+          </button>
+        </div>
+
+        <div class="shrink-0 transition-transform transform hover:scale-110">
           <button onclick="toggleDetail('detail2020')" 
-            class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
-                   text-black font-bold rounded-full shadow-md hover:from-yellow-500 hover:via-yellow-400 hover:to-yellow-600
-                   focus:outline-none focus:ring-4 focus:ring-yellow-400">
+            class="glow-gold w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-gradient-to-br from-yellow-400 via-yellow-300 to-yellow-500 
+                    text-black font-bold rounded-full shadow-[0_0_20px_5px_rgba(250,204,21,0.8)] hover:shadow-[0_0_30px_10px_rgba(250,204,21,1)]  transition-shadow duration-300 focus:outline-none focus:ring-4 focus:ring-yellow-400">
             2020
           </button>
         </div>
@@ -154,6 +211,17 @@
     </figure>
   </div>
 
+  <div id="detail2007" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2007</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/2007.webp" alt="2004 Rookie of the Year" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        CARRIES THE CLEVELAND CAVALIERS TO THEIR FIRST EVER FINALS
+      </figcaption>
+    </figure>
+  </div>
+
   <div id="detail2008" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
     <h2 class="text-3xl font-bold text-center mb-2">2008</h2>
     <figure class="flex flex-col items-center justify-center h-full text-center">
@@ -165,13 +233,46 @@
     </figure>
   </div>
 
+  <div id="detail2009" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2009</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/2009.webp" alt="2009 MVP" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        WON THE 2009 NBA MVP
+      </figcaption>
+    </figure>
+  </div>
+
+  <div id="detail2010" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2010</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/2010.jpg" alt="2009 MVP" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        WON THE 2010 NBA MVP
+      </figcaption>
+    </figure>
+  </div>
+
   <div id="detail2012" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
     <h2 class="text-3xl font-bold text-center mb-2">2012</h2>
     <figure class="flex flex-col items-center justify-center h-full text-center">
       <img src="images/timeline/lbj '12 champ.jpg" alt="2012 Champion" 
            class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
       <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
-        WINS FIRST NBA CHAMPIONSHIP AND MVP WITH MIAMI HEAT
+        WON HIS FIRST NBA CHAMPIONSHIP, FINALS MVP, AND 3RD MVP.
+      </figcaption>
+    </figure>
+  </div>
+
+  <div id="detail2013" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2013</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/2013.jpg" alt="2013 Champion" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        REPEATED AS NBA CHAMPION, 4TH MVP, AND FINALS MVP AGAIN.
       </figcaption>
     </figure>
   </div>
@@ -187,6 +288,17 @@
     </figure>
   </div>
 
+  <div id="detail2018" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
+    <h2 class="text-3xl font-bold text-center mb-2">2018</h2>
+    <figure class="flex flex-col items-center justify-center h-full text-center">
+      <img src="images/timeline/2018.jpg" alt="The King moves to the LA Lakers" 
+           class="rounded-md shadow-lg max-w-full max-h-[400px] object-contain" />
+      <figcaption class="mt-4 font-bold mb-2 font-style max-w-md mx-auto">
+        SIGNS WITH THE LOS ANGELES LAKERS
+      </figcaption>
+    </figure>
+  </div>
+
   <div id="detail2020" class="hidden text-white p-6 rounded-lg shadow-lg h-[540px] bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900">
     <h2 class="text-3xl font-bold text-center mb-2">2020</h2>
     <figure class="flex flex-col items-center justify-center h-full text-center">
@@ -197,6 +309,7 @@
       </figcaption>
     </figure>
   </div>
+
 </div>
 
   </section>
