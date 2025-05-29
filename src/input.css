@@ -1,14 +1,48 @@
+@import "tailwindcss";
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #F59E0B;
+  --titlefont: 'Inter', sans-serif;
+  --headingfont: 'Vollkorn', serif;
+  --bodyfont: 'Poppins', sans-serif;
+}
+
+
+
+
+nav .borg{
+  background-color: var(--primary-color);
+}
+
+.title{
+  font-family: var(--titlefont);
+  color: white;
+  font-size: 150px;
+  font-weight: 900;
+}
+
+.fullmenu{
+  font-family: var(--titlefont);
+  color: white;
+  font-weight: 900;
+}
+
+.header{
+  margin-top: 20px;
+  font-family: var(--titlefont);
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.regular{
+  font-family: var(--bodyfont);
+  color: var(--primary-color);
+  font-size: 20px;
+  font-weight: normal;
+}
 
 /* === Timeline Styles === */
-.hero-text {
-  background: linear-gradient(45deg, #ffffff, #f0f0f0, #ffffff, #e0e0e0);
-  background-size: 400% 400%;
-  animation: gradient-move 4s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.4), 0 0 20px rgba(255, 255, 255, 0.3);
-}
 
 .timeline {
   position: relative;
