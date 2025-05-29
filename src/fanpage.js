@@ -210,8 +210,6 @@ document.addEventListener("DOMContentLoaded", () => {
                   return;
                 }
 
-             
-
                 const formData = new FormData();
                 formData.append("name", name);
                 formData.append("message", message);
@@ -223,7 +221,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 .then(response => response.text())
                 .then(result => {
                   alert(result);
-                  messageInput.value = ""; // clear message only, keep name
+                  messageInput.value = ""; 
                 })
                 .catch(error => {
                   console.error("Submit error:", error);

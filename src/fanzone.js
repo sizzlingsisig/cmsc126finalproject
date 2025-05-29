@@ -197,22 +197,6 @@ const api = {
     }
   },
 
- async submitGuestbookMessage(name, message) {
-    try {
-        const formData = new FormData();
-        formData.append("name", name);
-        formData.append("message", message);
-        const response = await fetch("submit_message.php", {
-            method: "POST",
-            body: formData
-        });
-        
-        return await response.text();
-    } catch (error) {
-        console.error("Submit error:", error);
-        throw error;
-    }
-},
 
   async fetchLeaderboard() {
     try {
@@ -668,49 +652,42 @@ if (hasVoted) {
       }
     },
 
- guestbook() {
-    // Show the overlay with the guestbook title and content
+guestbook() {
     showOverlay(contentTemplates.guestbook.title, contentTemplates.guestbook.content);
     
-    // Get the submit button and add an event listener for the click event
     const submitBtn = document.getElementById("guestbook-submit");
-    submitBtn.addEventListener("click", () => this.handleGuestbookSubmit());
-},
+    submitBtn.onclick = async (e) => {
+        e.preventDefault();
+        
+        const name = document.getElementById("guest-name").value.trim();
+        const message = document.getElementById("guest-message").value.trim();
 
-async handleGuestbookSubmit() {
-    // Retrieve the name and message from the input fields
-    const name = document.getElementById("guest-name").value.trim();
-    const message = document.getElementById("guest-message").value.trim();
-
-    // Validate that both fields are filled
-    if (!name || !message) {
-        showAlert("Please fill in both fields.");
-        return;
-    }
-
-    try {
-        const formData = new FormData();
-        formData.append("name", name);
-        formData.append("message", message);
-
-        // Directly call submit_message.php
-        const response = await fetch("submit_message.php", {
-            method: "POST",
-            body: formData
-        });
-
-        // Check if the response is OK (status in the range 200-299)
-        if (!response.ok) {
-            throw new Error("Network response was not ok");
+        if (!name || !message) {
+            alert("Please fill in both fields.");
+            return;
         }
 
-        const result = await response.text(); // Get the response text
-        showAlert(result); // Show the result message
-        document.getElementById("guest-message").value = ""; // Clear the message input
-    } catch (error) {
-        console.error("Error submitting message:", error);
-        showAlert("Error submitting message."); // Handle any errors
-    }
+        try {
+            const response = await fetch("submit_message.php", {
+                method: "POST",
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: `name=${encodeURIComponent(name)}&message=${encodeURIComponent(message)}`
+            });
+
+            const result = await response.text();
+            
+            if (!response.ok) {
+                throw new Error(result || "Failed to submit.");
+            }
+
+            alert("Message sent successfully!");
+            document.getElementById("guest-name").value = "";
+            document.getElementById("guest-message").value = "";
+        } catch (error) {
+            console.error("Error:", error);
+            alert("Error: " + error.message);
+        }
+    };
 }
 ,
 
